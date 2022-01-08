@@ -1,13 +1,13 @@
 module.exports = function toReadable (number) {
   let wordArray0 = [
     '', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight',
-    ' nine'];
+    'nine'];
   let wordArrayException = [
     'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
     'sixteen', 'seventeen', 'eighteen', 'nineteen'];
   let wordArray1 = [
     '', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy',
-    ' eighty', ' ninety'];
+    'eighty', 'ninety'];
   let wordArray2 = [];
   wordArray2[0] = '';
   for (let i = 1; i < 10; i++) {
@@ -34,12 +34,12 @@ module.exports = function toReadable (number) {
       a = Math.floor(a / 100);
       j = 1;
     } else {
-      console.log(j);
       newWord = arrWord[j][a % 10] + ' ' + newWord;
+      newWord = newWord.trim();
       a = Math.floor(a / 10);
     }
     j++;
 
   }
-  return newWord.trim();
+  return newWord;
 }
