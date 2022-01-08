@@ -5,10 +5,11 @@ module.exports = function toReadable (number) {
      twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety];
   
   let ordinalNum = [];
+  let newWord = '';
   let index;
 
-   // find exception from 0 to 19
-   function caseException11 (n) {
+   // find exception from 10 to 19
+   function caseException10 (n) {
     return ((n % 100 > 9) && (n % 100 < 20)) ? true : false;
   }
 
@@ -34,6 +35,10 @@ module.exports = function toReadable (number) {
 
   // let numFindEqualWord;
   for (let i = 0; true ; i++) {
+    newWord = ordinalNum
+
+  }
+
     switch (ordinalNum[i]) {
       case 1 :
         wordNum[i] = 'one';
@@ -45,6 +50,6 @@ module.exports = function toReadable (number) {
         wordNum[i] = 'three';
         break;  
     }
-
-  }
+        
+  
 }
