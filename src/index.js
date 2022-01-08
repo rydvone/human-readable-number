@@ -1,6 +1,8 @@
 module.exports = function toReadable (number) {
   let wordArray = [
-    one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety];
+    one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve,
+     thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, 
+     twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety];
   
   let ordinalNum = [];
   let index;
@@ -15,6 +17,20 @@ module.exports = function toReadable (number) {
   //   return ((n % 100 > 9) && (n % 10 == 0)) ? true : false;
   // }
 
+  function numDecomposition (n, index) {
+    let a = n;
+    while (a >= 1) {
+      ordinalNum[index] = a % 10;
+      a = Math.floor(a / 10);
+      index++;
+    }
+  }
+  if (caseException11(n)) {
+    ordinalNum[0] = n % 100;
+    numDecomposition(Math.floor(n % 100), 1);
+  } else {
+    numDecomposition(n, 0);
+  }
 
   // let numFindEqualWord;
   for (let i = 0; true ; i++) {
