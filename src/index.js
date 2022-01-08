@@ -21,7 +21,6 @@ module.exports = function toReadable (number) {
     return 'zero';
   }
 
-  // find exception from 10 to 19
   function caseException11(number) {
     return ((number % 100 > 9) && (number % 100 < 20)) ? true : false;
   }
@@ -39,7 +38,6 @@ module.exports = function toReadable (number) {
       a = Math.floor(a / 10);
     }
     j++;
-
   }
   return newWord;
 }
